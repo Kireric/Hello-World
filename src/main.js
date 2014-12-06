@@ -16,7 +16,7 @@ var surface = new Surface({
     textAlign: 'center',
     fontSize: '46px',
     borderRadius: '5px',
-    background
+    backgroundColor: 'pink',
 
   }
 });
