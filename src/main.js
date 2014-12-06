@@ -7,7 +7,7 @@ var mainContext = Engine.createContext();
 
 var firstSurface = new Surface({
     size: [true, true],
-    content: 'Hello World',
+    content: 'Hello Hello',
     properties: {
         color: 'white',
         textAlign: 'center',
