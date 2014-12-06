@@ -1,27 +1,33 @@
-/*global famous*/
-// import dependencies
-var Engine = famous.core.Engine;
-var Modifier = famous.core.Modifier;
-var Transform = famous.core.Transform;
-var ImageSurface = famous.surfaces.ImageSurface;
 
-// create the main context
-var mainContext = Engine.createContext();
+var Engine     = require("famous/core/Engine");
+var Surface    = require("famous/core/Surface");
+var Transform  = require("famous/core/Transform");
+var Modifier   = require("famous/core/Modifier");
+var MouseSync  = require("famous/inputs/MouseSync");
 
-// your app here
-var logo = new ImageSurface({
-    size: [200, 200],
-    content: 'http://code.famo.us/assets/famous_logo.png',
-    classes: ['double-sided']
+var mainContext = Engine.createText();
+
+var surface = new Surface({
+  size: [200, 200],
+  content: 'Eric',
+  classes: ['double-sided'],
+  properties : {
+    color: 'coral',
+    textAlign: 'center',
+    fontSize: '46px',
+    borderRadius: '5px',
+    background
+
+  }
 });
 
 var initialTime = Date.now();
 var centerSpinModifier = new Modifier({
-    origin: [0.5, 0.5],
-    align: [0.5, 0.5],
-    transform : function () {
-        return Transform.rotateY(.002 * (Date.now() - initialTime));
-    }
+  origin: [0.5, 0.5],
+  align: [0.5, 0.5],
+  transform : function () {
+    return Transform.rotateY(.001 * (Date.now() - initialTime));
+  }
 });
 
-mainContext.add(centerSpinModifier).add(logo);
+mainContext.add(centerSpinModifier).add(surface);
