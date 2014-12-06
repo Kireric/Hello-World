@@ -3,31 +3,31 @@
 var Engine = famous.core.Engine;
 var Modifier = famous.core.Modifier;
 var Transform = famous.core.Transform;
-var ImageSurface = famous.surfaces.ImageSurface;
 
-var mainContext = Engine.createText();
+var mainContext = Engine.createContext();
 
-var surface = new Surface({
-  size: [200, 200],
-  content: 'Eric',
-  classes: ['double-sided'],
-  properties : {
-    color: 'coral',
-    textAlign: 'center',
-    fontSize: '46px',
-    borderRadius: '5px',
-    backgroundColor: 'pink',
+var firstSurface = new Surface({
+    size: [true, true],
+    content: 'Hello World',
+    properties: {
+        color: 'white',
+        textAlign: 'center',
+        fontSize: '40px',
+        borderRadius:'20px',
+        backgroundColor: '#FA5C4F'
 
-  }
+    }
 });
 
 var initialTime = Date.now();
 var centerSpinModifier = new Modifier({
-  origin: [0.5, 0.5],
-  align: [0.5, 0.5],
-  transform : function () {
-    return Transform.rotateY(.001 * (Date.now() - initialTime));
-  }
+    origin: [0.5, 0.5],
+    align: [0.5, 0.5],
+    transform : function () {
+        return Transform.rotateY(.005 * (Date.now() - initialTime));
+    }
 });
 
-mainContext.add(centerSpinModifier).add(surface);
+mainContext.add(centerSpinModifier).add(firstSurface);
+
+mainContext.add(centerSpinModifier).add(firstSurface);
