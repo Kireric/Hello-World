@@ -1,9 +1,7 @@
-
-var Engine     = require("famous/core/Engine");
-var Surface    = require("famous/core/Surface");
-var Transform  = require("famous/core/Transform");
-var Modifier   = require("famous/core/Modifier");
-var MouseSync  = require("famous/inputs/MouseSync");
+var Surface    = famous.core.Surface;
+var Engine = famous.core.Engine;
+var Modifier = famous.core.Modifier;
+var Transform = famous.core.Transform;
 
 var mainContext = Engine.createText();
 
@@ -16,7 +14,7 @@ var surface = new Surface({
     textAlign: 'center',
     fontSize: '46px',
     borderRadius: '5px',
-    backgroundColor: 'pink',
+    backgroundColor: 'pink'
 
   }
 });
