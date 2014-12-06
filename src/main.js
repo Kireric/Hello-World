@@ -9,11 +9,18 @@ var ImageSurface = famous.surfaces.ImageSurface;
 var mainContext = Engine.createContext();
 
 // your app here
-var logo = new ImageSurface({
+var logo;
+logo = new ImageSurface({
     size: [200, 200],
-    content: 'http://code.famo.us/assets/famous_logo.png',
-    classes: ['double-sided']
-});
+    content: 'Kyle',
+    classes: ['double-sided'],
+    properties: {
+        color: 'white',
+        textAlign: 'center',
+        fontSize: '40px',
+        borderRadius: '20px',
+        backgroundColor: '#FA5C4F'}
+    });
 
 var initialTime = Date.now();
 var centerSpinModifier = new Modifier({
