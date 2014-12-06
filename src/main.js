@@ -15,7 +15,7 @@ logo = new ImageSurface({
     content: 'Kyle',
     classes: ['double-sided'],
     properties: {
-        color: 'white',
+        color: 'gray',
         textAlign: 'center',
         fontSize: '40px',
         borderRadius: '20px',
